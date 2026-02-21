@@ -1576,7 +1576,7 @@ app.get('/api/docs/alias-guide', (req, res) => {
 
 /* ================= ROOT & API INFO ================= */
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+app.use(express.static("public"));
 });
 
 app.get('/api', (req, res) => {
@@ -1672,4 +1672,5 @@ process.on('SIGINT', () => {
     console.log('Server closed');
     process.exit(0);
   });
+
 });
